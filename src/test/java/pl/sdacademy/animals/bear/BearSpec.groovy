@@ -46,4 +46,40 @@ class BearSpec extends Specification {
         result == false
     }
 
+    def "Bear ate something"(){
+        given:
+        Bear bear = new BlackBear(1)
+        bear.eat(4)
+
+        when:
+        def result=bear.getWeight()
+
+        then:
+        result == 5
+    }
+
+    def "Bear drunk somtething"(){
+        given:
+        Bear bear = new BlackBear(1)
+        bear.drink(1)
+
+        when:
+        def result=bear.getWeight()
+
+        then:
+        result == 1.75
+    }
+
+    def "Bear after pooping"(){
+        given:
+        Bear bear = new BlackBear(1)
+        bear.poop()
+
+        when:
+        def result =bear.getWeight()
+
+        then:
+        result == 0.95
+    }
+
 }
