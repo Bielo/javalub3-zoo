@@ -36,6 +36,7 @@ public abstract class Bear implements Animal {
 
     public void eat() {
         lastMealTime = clock.getCurrentTime();
+
     }
 
     @Override
